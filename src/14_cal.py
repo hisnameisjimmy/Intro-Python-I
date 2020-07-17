@@ -29,4 +29,22 @@ it should use today’s date to get the month and year.
 
 import sys
 import calendar
-from datetime import datetime
+from datetime import date
+
+def printCalendar():
+  cal = calendar.TextCalendar(firstweekday=0)
+  if (len(sys.argv) > 2):
+    year = int(sys.argv[2])
+    month = int(sys.argv[1])
+    print(cal.formatmonth(year, month))
+  elif len(sys.argv) > 1:
+    year = date.today().year
+    month = int(sys.argv[1])
+    print(cal.formatmonth(year, month))
+  else:
+    year = date.today().year
+    month = date.today().month
+    print(cal.formatmonth(year, month))
+  
+
+printCalendar()
