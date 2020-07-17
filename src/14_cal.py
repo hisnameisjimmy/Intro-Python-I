@@ -45,6 +45,6 @@ def printCalendar():
     year = date.today().year
     month = date.today().month
     print(cal.formatmonth(year, month))
+    print("Pass in a date in format [month] [year] to see a calendar")
   
-
 printCalendar()
